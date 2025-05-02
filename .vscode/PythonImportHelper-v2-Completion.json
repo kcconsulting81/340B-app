@@ -1,0 +1,915 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "streamlit",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "streamlit",
+        "description": "streamlit",
+        "detail": "streamlit",
+        "documentation": {}
+    },
+    {
+        "label": "date",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "load_file",
+        "kind": 2,
+        "importPath": "pages.audit_request_response_generator",
+        "description": "pages.audit_request_response_generator",
+        "peekOfCode": "def load_file(path):\n    \"\"\"Loads a CSV file from the library folder if available.\"\"\"\n    return pd.read_csv(path) if os.path.exists(path) else pd.DataFrame()\nproviders = load_file(provider_file)\ncontracts = load_file(contract_file)\nclaims = load_file(claim_file)\nsites = load_file(site_file)\nif template_file:\n    try:\n        writer = pd.ExcelWriter(\"audit_response.xlsx\", engine=\"xlsxwriter\")",
+        "detail": "pages.audit_request_response_generator",
+        "documentation": {}
+    },
+    {
+        "label": "template_file",
+        "kind": 5,
+        "importPath": "pages.audit_request_response_generator",
+        "description": "pages.audit_request_response_generator",
+        "peekOfCode": "template_file = st.file_uploader(\"📥 Upload Audit Request Template (Excel)\", type=[\"xlsx\"])\nparent_ce = st.selectbox(\"🏥 Select Parent Covered Entity\", [\n    \"CE001 - University Health\",\n    \"CE002 - Regional Hospital\",\n    \"CE003 - Community Clinic\"\n])\n# Load stored data files (example placeholders)\nprovider_file = os.path.join(\"library\", \"provider_list.csv\")\ncontract_file = os.path.join(\"library\", \"contract_pharmacies.csv\")\nclaim_file = os.path.join(\"library\", \"compliance_flags.csv\")",
+        "detail": "pages.audit_request_response_generator",
+        "documentation": {}
+    },
+    {
+        "label": "parent_ce",
+        "kind": 5,
+        "importPath": "pages.audit_request_response_generator",
+        "description": "pages.audit_request_response_generator",
+        "peekOfCode": "parent_ce = st.selectbox(\"🏥 Select Parent Covered Entity\", [\n    \"CE001 - University Health\",\n    \"CE002 - Regional Hospital\",\n    \"CE003 - Community Clinic\"\n])\n# Load stored data files (example placeholders)\nprovider_file = os.path.join(\"library\", \"provider_list.csv\")\ncontract_file = os.path.join(\"library\", \"contract_pharmacies.csv\")\nclaim_file = os.path.join(\"library\", \"compliance_flags.csv\")\nsite_file = os.path.join(\"library\", \"340B_site_crosswalk.csv\")",
+        "detail": "pages.audit_request_response_generator",
+        "documentation": {}
+    },
+    {
+        "label": "provider_file",
+        "kind": 5,
+        "importPath": "pages.audit_request_response_generator",
+        "description": "pages.audit_request_response_generator",
+        "peekOfCode": "provider_file = os.path.join(\"library\", \"provider_list.csv\")\ncontract_file = os.path.join(\"library\", \"contract_pharmacies.csv\")\nclaim_file = os.path.join(\"library\", \"compliance_flags.csv\")\nsite_file = os.path.join(\"library\", \"340B_site_crosswalk.csv\")\ndef load_file(path):\n    \"\"\"Loads a CSV file from the library folder if available.\"\"\"\n    return pd.read_csv(path) if os.path.exists(path) else pd.DataFrame()\nproviders = load_file(provider_file)\ncontracts = load_file(contract_file)\nclaims = load_file(claim_file)",
+        "detail": "pages.audit_request_response_generator",
+        "documentation": {}
+    },
+    {
+        "label": "contract_file",
+        "kind": 5,
+        "importPath": "pages.audit_request_response_generator",
+        "description": "pages.audit_request_response_generator",
+        "peekOfCode": "contract_file = os.path.join(\"library\", \"contract_pharmacies.csv\")\nclaim_file = os.path.join(\"library\", \"compliance_flags.csv\")\nsite_file = os.path.join(\"library\", \"340B_site_crosswalk.csv\")\ndef load_file(path):\n    \"\"\"Loads a CSV file from the library folder if available.\"\"\"\n    return pd.read_csv(path) if os.path.exists(path) else pd.DataFrame()\nproviders = load_file(provider_file)\ncontracts = load_file(contract_file)\nclaims = load_file(claim_file)\nsites = load_file(site_file)",
+        "detail": "pages.audit_request_response_generator",
+        "documentation": {}
+    },
+    {
+        "label": "claim_file",
+        "kind": 5,
+        "importPath": "pages.audit_request_response_generator",
+        "description": "pages.audit_request_response_generator",
+        "peekOfCode": "claim_file = os.path.join(\"library\", \"compliance_flags.csv\")\nsite_file = os.path.join(\"library\", \"340B_site_crosswalk.csv\")\ndef load_file(path):\n    \"\"\"Loads a CSV file from the library folder if available.\"\"\"\n    return pd.read_csv(path) if os.path.exists(path) else pd.DataFrame()\nproviders = load_file(provider_file)\ncontracts = load_file(contract_file)\nclaims = load_file(claim_file)\nsites = load_file(site_file)\nif template_file:",
+        "detail": "pages.audit_request_response_generator",
+        "documentation": {}
+    },
+    {
+        "label": "site_file",
+        "kind": 5,
+        "importPath": "pages.audit_request_response_generator",
+        "description": "pages.audit_request_response_generator",
+        "peekOfCode": "site_file = os.path.join(\"library\", \"340B_site_crosswalk.csv\")\ndef load_file(path):\n    \"\"\"Loads a CSV file from the library folder if available.\"\"\"\n    return pd.read_csv(path) if os.path.exists(path) else pd.DataFrame()\nproviders = load_file(provider_file)\ncontracts = load_file(contract_file)\nclaims = load_file(claim_file)\nsites = load_file(site_file)\nif template_file:\n    try:",
+        "detail": "pages.audit_request_response_generator",
+        "documentation": {}
+    },
+    {
+        "label": "providers",
+        "kind": 5,
+        "importPath": "pages.audit_request_response_generator",
+        "description": "pages.audit_request_response_generator",
+        "peekOfCode": "providers = load_file(provider_file)\ncontracts = load_file(contract_file)\nclaims = load_file(claim_file)\nsites = load_file(site_file)\nif template_file:\n    try:\n        writer = pd.ExcelWriter(\"audit_response.xlsx\", engine=\"xlsxwriter\")\n        # Fill template with matching data (mock tab structure)\n        if not providers.empty:\n            providers.to_excel(writer, sheet_name=\"Providers\", index=False)",
+        "detail": "pages.audit_request_response_generator",
+        "documentation": {}
+    },
+    {
+        "label": "contracts",
+        "kind": 5,
+        "importPath": "pages.audit_request_response_generator",
+        "description": "pages.audit_request_response_generator",
+        "peekOfCode": "contracts = load_file(contract_file)\nclaims = load_file(claim_file)\nsites = load_file(site_file)\nif template_file:\n    try:\n        writer = pd.ExcelWriter(\"audit_response.xlsx\", engine=\"xlsxwriter\")\n        # Fill template with matching data (mock tab structure)\n        if not providers.empty:\n            providers.to_excel(writer, sheet_name=\"Providers\", index=False)\n        if not claims.empty:",
+        "detail": "pages.audit_request_response_generator",
+        "documentation": {}
+    },
+    {
+        "label": "claims",
+        "kind": 5,
+        "importPath": "pages.audit_request_response_generator",
+        "description": "pages.audit_request_response_generator",
+        "peekOfCode": "claims = load_file(claim_file)\nsites = load_file(site_file)\nif template_file:\n    try:\n        writer = pd.ExcelWriter(\"audit_response.xlsx\", engine=\"xlsxwriter\")\n        # Fill template with matching data (mock tab structure)\n        if not providers.empty:\n            providers.to_excel(writer, sheet_name=\"Providers\", index=False)\n        if not claims.empty:\n            claims.to_excel(writer, sheet_name=\"Claims\", index=False)",
+        "detail": "pages.audit_request_response_generator",
+        "documentation": {}
+    },
+    {
+        "label": "sites",
+        "kind": 5,
+        "importPath": "pages.audit_request_response_generator",
+        "description": "pages.audit_request_response_generator",
+        "peekOfCode": "sites = load_file(site_file)\nif template_file:\n    try:\n        writer = pd.ExcelWriter(\"audit_response.xlsx\", engine=\"xlsxwriter\")\n        # Fill template with matching data (mock tab structure)\n        if not providers.empty:\n            providers.to_excel(writer, sheet_name=\"Providers\", index=False)\n        if not claims.empty:\n            claims.to_excel(writer, sheet_name=\"Claims\", index=False)\n        if not contracts.empty:",
+        "detail": "pages.audit_request_response_generator",
+        "documentation": {}
+    },
+    {
+        "label": "findings_file",
+        "kind": 5,
+        "importPath": "pages.audit_risk_analyzer_and_rca_generator",
+        "description": "pages.audit_risk_analyzer_and_rca_generator",
+        "peekOfCode": "findings_file = st.file_uploader(\n    \"📁 Upload Historical Audit Findings\", type=[\"xlsx\", \"csv\"]\n)\ncurrent_data_file = st.file_uploader(\n    \"📥 Upload Current Program Snapshot (e.g., claims, OPAIS)\", type=[\"xlsx\", \"csv\"]\n)\nif findings_file and current_data_file:\n    # Load files\n    past = (\n        pd.read_excel(findings_file)",
+        "detail": "pages.audit_risk_analyzer_and_rca_generator",
+        "documentation": {}
+    },
+    {
+        "label": "current_data_file",
+        "kind": 5,
+        "importPath": "pages.audit_risk_analyzer_and_rca_generator",
+        "description": "pages.audit_risk_analyzer_and_rca_generator",
+        "peekOfCode": "current_data_file = st.file_uploader(\n    \"📥 Upload Current Program Snapshot (e.g., claims, OPAIS)\", type=[\"xlsx\", \"csv\"]\n)\nif findings_file and current_data_file:\n    # Load files\n    past = (\n        pd.read_excel(findings_file)\n        if findings_file.name.endswith(\"xlsx\")\n        else pd.read_csv(findings_file)\n    )",
+        "detail": "pages.audit_risk_analyzer_and_rca_generator",
+        "documentation": {}
+    },
+    {
+        "label": "data_path",
+        "kind": 5,
+        "importPath": "pages.change_evaluation_toolkit",
+        "description": "pages.change_evaluation_toolkit",
+        "peekOfCode": "data_path = \"library\"\nlog_file = os.path.join(data_path, \"change_evaluation_log.csv\")\nif os.path.exists(log_file):\n    change_log = pd.read_csv(log_file)\nelse:\n    change_log = pd.DataFrame(columns=[\n        \"Change Type\", \"Description\", \"Go-Live Date\", \"Estimated Cost ($)\", \"Estimated Savings ($)\",\n        \"Risk Level\", \"ROI (%)\", \"Implementation Time (days)\", \"Submitted By\", \"Date Submitted\"\n    ])\n# Form submission",
+        "detail": "pages.change_evaluation_toolkit",
+        "documentation": {}
+    },
+    {
+        "label": "log_file",
+        "kind": 5,
+        "importPath": "pages.change_evaluation_toolkit",
+        "description": "pages.change_evaluation_toolkit",
+        "peekOfCode": "log_file = os.path.join(data_path, \"change_evaluation_log.csv\")\nif os.path.exists(log_file):\n    change_log = pd.read_csv(log_file)\nelse:\n    change_log = pd.DataFrame(columns=[\n        \"Change Type\", \"Description\", \"Go-Live Date\", \"Estimated Cost ($)\", \"Estimated Savings ($)\",\n        \"Risk Level\", \"ROI (%)\", \"Implementation Time (days)\", \"Submitted By\", \"Date Submitted\"\n    ])\n# Form submission\nst.subheader(\"📤 Submit New Change Request\")",
+        "detail": "pages.change_evaluation_toolkit",
+        "documentation": {}
+    },
+    {
+        "label": "claims_file",
+        "kind": 5,
+        "importPath": "pages.claims_validator",
+        "description": "pages.claims_validator",
+        "peekOfCode": "claims_file = st.file_uploader(\"💊 Upload Medicaid Claims File\", type=[\"xlsx\", \"csv\"])\nbin_file = st.file_uploader(\"📚 Upload Medicaid BIN/PCN/Group Library\", type=[\"xlsx\", \"csv\"])\nif claims_file and bin_file:\n    # Read files into DataFrames\n    claims_df = (\n        pd.read_excel(claims_file)\n        if claims_file.name.endswith(\"xlsx\")\n        else pd.read_csv(claims_file)\n    )\n    plans_df = (",
+        "detail": "pages.claims_validator",
+        "documentation": {}
+    },
+    {
+        "label": "bin_file",
+        "kind": 5,
+        "importPath": "pages.claims_validator",
+        "description": "pages.claims_validator",
+        "peekOfCode": "bin_file = st.file_uploader(\"📚 Upload Medicaid BIN/PCN/Group Library\", type=[\"xlsx\", \"csv\"])\nif claims_file and bin_file:\n    # Read files into DataFrames\n    claims_df = (\n        pd.read_excel(claims_file)\n        if claims_file.name.endswith(\"xlsx\")\n        else pd.read_csv(claims_file)\n    )\n    plans_df = (\n        pd.read_excel(bin_file)",
+        "detail": "pages.claims_validator",
+        "documentation": {}
+    },
+    {
+        "label": "dispense_file",
+        "kind": 5,
+        "importPath": "pages.compliance_screener",
+        "description": "pages.compliance_screener",
+        "peekOfCode": "dispense_file = st.file_uploader(\n    \"💊 Upload Dispense or Claim File\",\n    type=[\"xlsx\", \"csv\"]\n)\nprovider_file = st.file_uploader(\n    \"🧑‍⚕️ Upload Provider Eligibility List\",\n    type=[\"xlsx\", \"csv\"]\n)\nsite_file = st.file_uploader(\n    \"📍 Upload Registered Site List\",",
+        "detail": "pages.compliance_screener",
+        "documentation": {}
+    },
+    {
+        "label": "provider_file",
+        "kind": 5,
+        "importPath": "pages.compliance_screener",
+        "description": "pages.compliance_screener",
+        "peekOfCode": "provider_file = st.file_uploader(\n    \"🧑‍⚕️ Upload Provider Eligibility List\",\n    type=[\"xlsx\", \"csv\"]\n)\nsite_file = st.file_uploader(\n    \"📍 Upload Registered Site List\",\n    type=[\"xlsx\", \"csv\"]\n)\norphan_file = st.file_uploader(\n    \"🧬 Upload Orphan Drug NDC List\",",
+        "detail": "pages.compliance_screener",
+        "documentation": {}
+    },
+    {
+        "label": "site_file",
+        "kind": 5,
+        "importPath": "pages.compliance_screener",
+        "description": "pages.compliance_screener",
+        "peekOfCode": "site_file = st.file_uploader(\n    \"📍 Upload Registered Site List\",\n    type=[\"xlsx\", \"csv\"]\n)\norphan_file = st.file_uploader(\n    \"🧬 Upload Orphan Drug NDC List\",\n    type=[\"xlsx\", \"csv\"]\n)\nmef_file = st.file_uploader(\n    \"🗂 Upload Medicaid Exclusion File (MEF)\",",
+        "detail": "pages.compliance_screener",
+        "documentation": {}
+    },
+    {
+        "label": "orphan_file",
+        "kind": 5,
+        "importPath": "pages.compliance_screener",
+        "description": "pages.compliance_screener",
+        "peekOfCode": "orphan_file = st.file_uploader(\n    \"🧬 Upload Orphan Drug NDC List\",\n    type=[\"xlsx\", \"csv\"]\n)\nmef_file = st.file_uploader(\n    \"🗂 Upload Medicaid Exclusion File (MEF)\",\n    type=[\"xlsx\", \"csv\"]\n)\n# Proceed when all files are uploaded\nif all([",
+        "detail": "pages.compliance_screener",
+        "documentation": {}
+    },
+    {
+        "label": "mef_file",
+        "kind": 5,
+        "importPath": "pages.compliance_screener",
+        "description": "pages.compliance_screener",
+        "peekOfCode": "mef_file = st.file_uploader(\n    \"🗂 Upload Medicaid Exclusion File (MEF)\",\n    type=[\"xlsx\", \"csv\"]\n)\n# Proceed when all files are uploaded\nif all([\n    dispense_file,\n    provider_file,\n    site_file,\n    orphan_file,",
+        "detail": "pages.compliance_screener",
+        "documentation": {}
+    },
+    {
+        "label": "contract_file",
+        "kind": 5,
+        "importPath": "pages.contract_tracker",
+        "description": "pages.contract_tracker",
+        "peekOfCode": "contract_file = st.file_uploader(\n    \"📄 Upload Contract File (NDCs, Dates, Account Types)\",\n    type=[\"xlsx\", \"csv\"]\n)\ninvoice_file = st.file_uploader(\n    \"💊 (Optional) Upload Invoice to Check Coverage\",\n    type=[\"xlsx\", \"csv\"]\n)\nif contract_file:\n    contracts = (",
+        "detail": "pages.contract_tracker",
+        "documentation": {}
+    },
+    {
+        "label": "invoice_file",
+        "kind": 5,
+        "importPath": "pages.contract_tracker",
+        "description": "pages.contract_tracker",
+        "peekOfCode": "invoice_file = st.file_uploader(\n    \"💊 (Optional) Upload Invoice to Check Coverage\",\n    type=[\"xlsx\", \"csv\"]\n)\nif contract_file:\n    contracts = (\n        pd.read_excel(contract_file)\n        if contract_file.name.endswith(\"xlsx\")\n        else pd.read_csv(contract_file)\n    )",
+        "detail": "pages.contract_tracker",
+        "documentation": {}
+    },
+    {
+        "label": "LIBRARY_FOLDER",
+        "kind": 5,
+        "importPath": "pages.document_library",
+        "description": "pages.document_library",
+        "peekOfCode": "LIBRARY_FOLDER = \"library\"\nos.makedirs(LIBRARY_FOLDER, exist_ok=True)\nINDEX_FILE = os.path.join(LIBRARY_FOLDER, \"library_index.csv\")\n# Load or create the index log\nif os.path.exists(INDEX_FILE):\n    index_df = pd.read_csv(INDEX_FILE)\nelse:\n    index_df = pd.DataFrame(columns=[\"Filename\", \"Category\", \"Upload Date\", \"Path\"])\nst.set_page_config(page_title=\"📂 Document Library\", layout=\"wide\")\nst.title(\"📂 340B Document Library\")",
+        "detail": "pages.document_library",
+        "documentation": {}
+    },
+    {
+        "label": "INDEX_FILE",
+        "kind": 5,
+        "importPath": "pages.document_library",
+        "description": "pages.document_library",
+        "peekOfCode": "INDEX_FILE = os.path.join(LIBRARY_FOLDER, \"library_index.csv\")\n# Load or create the index log\nif os.path.exists(INDEX_FILE):\n    index_df = pd.read_csv(INDEX_FILE)\nelse:\n    index_df = pd.DataFrame(columns=[\"Filename\", \"Category\", \"Upload Date\", \"Path\"])\nst.set_page_config(page_title=\"📂 Document Library\", layout=\"wide\")\nst.title(\"📂 340B Document Library\")\nst.subheader(\"📤 Upload Document\")\nuploaded_file = st.file_uploader(",
+        "detail": "pages.document_library",
+        "documentation": {}
+    },
+    {
+        "label": "uploaded_file",
+        "kind": 5,
+        "importPath": "pages.document_library",
+        "description": "pages.document_library",
+        "peekOfCode": "uploaded_file = st.file_uploader(\n    \"Select a file to upload\", type=[\"xlsx\", \"csv\", \"xls\", \"pdf\"]\n)\ncategory = st.selectbox(  # type: ignore[attr-defined]\n    \"📁 Choose a category\",\n    [\n        \"Medicare Cost Report\", \"Ceiling Price File\", \"Wholesaler Pricing\", \"Invoice\",\n        \"TPA Export\", \"Contract\", \"MEF\", \"OPAIS\", \"Other\"\n    ]\n)",
+        "detail": "pages.document_library",
+        "documentation": {}
+    },
+    {
+        "label": "category",
+        "kind": 5,
+        "importPath": "pages.document_library",
+        "description": "pages.document_library",
+        "peekOfCode": "category = st.selectbox(  # type: ignore[attr-defined]\n    \"📁 Choose a category\",\n    [\n        \"Medicare Cost Report\", \"Ceiling Price File\", \"Wholesaler Pricing\", \"Invoice\",\n        \"TPA Export\", \"Contract\", \"MEF\", \"OPAIS\", \"Other\"\n    ]\n)\nif uploaded_file and category:\n    timestamp = datetime.now().strftime(\"%Y%m%d_%H%M%S\")\n    SAVE_NAME = f\"{timestamp}_{uploaded_file.name}\"",
+        "detail": "pages.document_library",
+        "documentation": {}
+    },
+    {
+        "label": "invoice_file",
+        "kind": 5,
+        "importPath": "pages.invoice_checker",
+        "description": "pages.invoice_checker",
+        "peekOfCode": "invoice_file = st.file_uploader(\n    \"📄 Upload Invoice File\",\n    type=[\"xlsx\", \"csv\"]\n)\nprice_file = st.file_uploader(\n    \"💸 Upload 340B Ceiling Price File\",\n    type=[\"xlsx\", \"csv\"]\n)\nif invoice_file and price_file:\n    invoice_df = (",
+        "detail": "pages.invoice_checker",
+        "documentation": {}
+    },
+    {
+        "label": "price_file",
+        "kind": 5,
+        "importPath": "pages.invoice_checker",
+        "description": "pages.invoice_checker",
+        "peekOfCode": "price_file = st.file_uploader(\n    \"💸 Upload 340B Ceiling Price File\",\n    type=[\"xlsx\", \"csv\"]\n)\nif invoice_file and price_file:\n    invoice_df = (\n        pd.read_excel(invoice_file)\n        if invoice_file.name.endswith(\"xlsx\")\n        else pd.read_csv(invoice_file)\n    )",
+        "detail": "pages.invoice_checker",
+        "documentation": {}
+    },
+    {
+        "label": "dispense_file",
+        "kind": 5,
+        "importPath": "pages.lookback_impact_modeler",
+        "description": "pages.lookback_impact_modeler",
+        "peekOfCode": "dispense_file = st.file_uploader(\"📄 Upload Dispensed Drug File\", type=[\"xlsx\", \"csv\"])\nvisit_file = st.file_uploader(\"🩺 Upload Encounter Visit File\", type=[\"xlsx\", \"csv\"])\nbefore_days = st.slider(\"⬅️ Lookback Days BEFORE Dispense\", min_value=0, max_value=30, value=4)\nafter_days = st.slider(\"➡️ Lookback Days AFTER Dispense\", min_value=0, max_value=30, value=4)\nif dispense_file and visit_file:\n    disp = (\n        pd.read_excel(dispense_file)\n        if dispense_file.name.endswith(\"xlsx\")\n        else pd.read_csv(dispense_file)\n    )",
+        "detail": "pages.lookback_impact_modeler",
+        "documentation": {}
+    },
+    {
+        "label": "visit_file",
+        "kind": 5,
+        "importPath": "pages.lookback_impact_modeler",
+        "description": "pages.lookback_impact_modeler",
+        "peekOfCode": "visit_file = st.file_uploader(\"🩺 Upload Encounter Visit File\", type=[\"xlsx\", \"csv\"])\nbefore_days = st.slider(\"⬅️ Lookback Days BEFORE Dispense\", min_value=0, max_value=30, value=4)\nafter_days = st.slider(\"➡️ Lookback Days AFTER Dispense\", min_value=0, max_value=30, value=4)\nif dispense_file and visit_file:\n    disp = (\n        pd.read_excel(dispense_file)\n        if dispense_file.name.endswith(\"xlsx\")\n        else pd.read_csv(dispense_file)\n    )\n    visits = (",
+        "detail": "pages.lookback_impact_modeler",
+        "documentation": {}
+    },
+    {
+        "label": "before_days",
+        "kind": 5,
+        "importPath": "pages.lookback_impact_modeler",
+        "description": "pages.lookback_impact_modeler",
+        "peekOfCode": "before_days = st.slider(\"⬅️ Lookback Days BEFORE Dispense\", min_value=0, max_value=30, value=4)\nafter_days = st.slider(\"➡️ Lookback Days AFTER Dispense\", min_value=0, max_value=30, value=4)\nif dispense_file and visit_file:\n    disp = (\n        pd.read_excel(dispense_file)\n        if dispense_file.name.endswith(\"xlsx\")\n        else pd.read_csv(dispense_file)\n    )\n    visits = (\n        pd.read_excel(visit_file)",
+        "detail": "pages.lookback_impact_modeler",
+        "documentation": {}
+    },
+    {
+        "label": "after_days",
+        "kind": 5,
+        "importPath": "pages.lookback_impact_modeler",
+        "description": "pages.lookback_impact_modeler",
+        "peekOfCode": "after_days = st.slider(\"➡️ Lookback Days AFTER Dispense\", min_value=0, max_value=30, value=4)\nif dispense_file and visit_file:\n    disp = (\n        pd.read_excel(dispense_file)\n        if dispense_file.name.endswith(\"xlsx\")\n        else pd.read_csv(dispense_file)\n    )\n    visits = (\n        pd.read_excel(visit_file)\n        if visit_file.name.endswith(\"xlsx\")",
+        "detail": "pages.lookback_impact_modeler",
+        "documentation": {}
+    },
+    {
+        "label": "load_uploaded",
+        "kind": 2,
+        "importPath": "pages.manufacturer_restriction_manager",
+        "description": "pages.manufacturer_restriction_manager",
+        "peekOfCode": "def load_uploaded(file):\n    if not file:\n        return pd.DataFrame()\n    if file.name.endswith(\"xlsx\"):\n        return pd.read_excel(file)\n    return pd.read_csv(file)\nrestrictions_df = load_uploaded(restrictions_file)\nalternatives_df = load_uploaded(alternatives_file)\nmarkup_df = load_uploaded(markup_file)\n# Display manufacturer restrictions",
+        "detail": "pages.manufacturer_restriction_manager",
+        "documentation": {}
+    },
+    {
+        "label": "restrictions_file",
+        "kind": 5,
+        "importPath": "pages.manufacturer_restriction_manager",
+        "description": "pages.manufacturer_restriction_manager",
+        "peekOfCode": "restrictions_file = st.file_uploader(\"📥 Upload Manufacturer Restrictions List\", type=[\"csv\", \"xlsx\"])\nalternatives_file = st.file_uploader(\"🔄 Upload NDC Alternative Crosswalk\", type=[\"csv\", \"xlsx\"])\nmarkup_file = st.file_uploader(\"💰 Upload Markup Algorithm Table\", type=[\"csv\", \"xlsx\"])\n# Load data\ndef load_uploaded(file):\n    if not file:\n        return pd.DataFrame()\n    if file.name.endswith(\"xlsx\"):\n        return pd.read_excel(file)\n    return pd.read_csv(file)",
+        "detail": "pages.manufacturer_restriction_manager",
+        "documentation": {}
+    },
+    {
+        "label": "alternatives_file",
+        "kind": 5,
+        "importPath": "pages.manufacturer_restriction_manager",
+        "description": "pages.manufacturer_restriction_manager",
+        "peekOfCode": "alternatives_file = st.file_uploader(\"🔄 Upload NDC Alternative Crosswalk\", type=[\"csv\", \"xlsx\"])\nmarkup_file = st.file_uploader(\"💰 Upload Markup Algorithm Table\", type=[\"csv\", \"xlsx\"])\n# Load data\ndef load_uploaded(file):\n    if not file:\n        return pd.DataFrame()\n    if file.name.endswith(\"xlsx\"):\n        return pd.read_excel(file)\n    return pd.read_csv(file)\nrestrictions_df = load_uploaded(restrictions_file)",
+        "detail": "pages.manufacturer_restriction_manager",
+        "documentation": {}
+    },
+    {
+        "label": "markup_file",
+        "kind": 5,
+        "importPath": "pages.manufacturer_restriction_manager",
+        "description": "pages.manufacturer_restriction_manager",
+        "peekOfCode": "markup_file = st.file_uploader(\"💰 Upload Markup Algorithm Table\", type=[\"csv\", \"xlsx\"])\n# Load data\ndef load_uploaded(file):\n    if not file:\n        return pd.DataFrame()\n    if file.name.endswith(\"xlsx\"):\n        return pd.read_excel(file)\n    return pd.read_csv(file)\nrestrictions_df = load_uploaded(restrictions_file)\nalternatives_df = load_uploaded(alternatives_file)",
+        "detail": "pages.manufacturer_restriction_manager",
+        "documentation": {}
+    },
+    {
+        "label": "restrictions_df",
+        "kind": 5,
+        "importPath": "pages.manufacturer_restriction_manager",
+        "description": "pages.manufacturer_restriction_manager",
+        "peekOfCode": "restrictions_df = load_uploaded(restrictions_file)\nalternatives_df = load_uploaded(alternatives_file)\nmarkup_df = load_uploaded(markup_file)\n# Display manufacturer restrictions\nif not restrictions_df.empty:\n    st.subheader(\"📛 Manufacturer Restrictions by State\")\n    st.dataframe(restrictions_df)\n# Display alternatives\nif not alternatives_df.empty:\n    st.subheader(\"💊 Therapeutic/Biosimilar Alternatives\")",
+        "detail": "pages.manufacturer_restriction_manager",
+        "documentation": {}
+    },
+    {
+        "label": "alternatives_df",
+        "kind": 5,
+        "importPath": "pages.manufacturer_restriction_manager",
+        "description": "pages.manufacturer_restriction_manager",
+        "peekOfCode": "alternatives_df = load_uploaded(alternatives_file)\nmarkup_df = load_uploaded(markup_file)\n# Display manufacturer restrictions\nif not restrictions_df.empty:\n    st.subheader(\"📛 Manufacturer Restrictions by State\")\n    st.dataframe(restrictions_df)\n# Display alternatives\nif not alternatives_df.empty:\n    st.subheader(\"💊 Therapeutic/Biosimilar Alternatives\")\n    st.dataframe(alternatives_df)",
+        "detail": "pages.manufacturer_restriction_manager",
+        "documentation": {}
+    },
+    {
+        "label": "markup_df",
+        "kind": 5,
+        "importPath": "pages.manufacturer_restriction_manager",
+        "description": "pages.manufacturer_restriction_manager",
+        "peekOfCode": "markup_df = load_uploaded(markup_file)\n# Display manufacturer restrictions\nif not restrictions_df.empty:\n    st.subheader(\"📛 Manufacturer Restrictions by State\")\n    st.dataframe(restrictions_df)\n# Display alternatives\nif not alternatives_df.empty:\n    st.subheader(\"💊 Therapeutic/Biosimilar Alternatives\")\n    st.dataframe(alternatives_df)\n# Display markup rules",
+        "detail": "pages.manufacturer_restriction_manager",
+        "documentation": {}
+    },
+    {
+        "label": "uploaded_file",
+        "kind": 5,
+        "importPath": "pages.mcr_parser",
+        "description": "pages.mcr_parser",
+        "peekOfCode": "uploaded_file = st.file_uploader(\n    \"📥 Upload Medicare Cost Report (Excel)\", type=[\"xlsx\"]\n)\nif uploaded_file:\n    try:\n        xls = pd.ExcelFile(uploaded_file)\n        sheet_names = xls.sheet_names\n        st.success(\"✅ File loaded successfully\")\n        st.write(\"Worksheets found:\", sheet_names)\n        ws_a = xls.parse(\"Worksheet A\")",
+        "detail": "pages.mcr_parser",
+        "documentation": {}
+    },
+    {
+        "label": "invoice_file",
+        "kind": 5,
+        "importPath": "pages.mef_opais_checker",
+        "description": "pages.mef_opais_checker",
+        "peekOfCode": "invoice_file = st.file_uploader(\n    \"📦 Upload Invoice File (with Site Addresses)\", type=[\"xlsx\", \"csv\"]\n)\nopais_file = st.file_uploader(\n    \"🏥 Upload OPAIS Site Registration File\", type=[\"xlsx\", \"csv\"]\n)\nmef_file = st.file_uploader(\n    \"🗂 Upload Medicaid Exclusion File (MEF)\", type=[\"xlsx\", \"csv\"]\n)\nif invoice_file and opais_file and mef_file:",
+        "detail": "pages.mef_opais_checker",
+        "documentation": {}
+    },
+    {
+        "label": "opais_file",
+        "kind": 5,
+        "importPath": "pages.mef_opais_checker",
+        "description": "pages.mef_opais_checker",
+        "peekOfCode": "opais_file = st.file_uploader(\n    \"🏥 Upload OPAIS Site Registration File\", type=[\"xlsx\", \"csv\"]\n)\nmef_file = st.file_uploader(\n    \"🗂 Upload Medicaid Exclusion File (MEF)\", type=[\"xlsx\", \"csv\"]\n)\nif invoice_file and opais_file and mef_file:\n    invoices = (\n        pd.read_excel(invoice_file)\n        if invoice_file.name.endswith(\"xlsx\")",
+        "detail": "pages.mef_opais_checker",
+        "documentation": {}
+    },
+    {
+        "label": "mef_file",
+        "kind": 5,
+        "importPath": "pages.mef_opais_checker",
+        "description": "pages.mef_opais_checker",
+        "peekOfCode": "mef_file = st.file_uploader(\n    \"🗂 Upload Medicaid Exclusion File (MEF)\", type=[\"xlsx\", \"csv\"]\n)\nif invoice_file and opais_file and mef_file:\n    invoices = (\n        pd.read_excel(invoice_file)\n        if invoice_file.name.endswith(\"xlsx\")\n        else pd.read_csv(invoice_file)\n    )\n    opais = (",
+        "detail": "pages.mef_opais_checker",
+        "documentation": {}
+    },
+    {
+        "label": "accumulator_file",
+        "kind": 5,
+        "importPath": "pages.ndc_migration_checker",
+        "description": "pages.ndc_migration_checker",
+        "peekOfCode": "accumulator_file = st.file_uploader(\"📥 Upload TPA Accumulator Report\", type=[\"xlsx\", \"csv\"])\nmigration_file = st.file_uploader(\"🔄 Upload NDC Migration List\", type=[\"xlsx\", \"csv\"])\ndefault_ndc_file = st.file_uploader(\"💊 Upload Default NDC Report from EHR\", type=[\"xlsx\", \"csv\"])\nif accumulator_file and migration_file and default_ndc_file:\n    acc = (\n        pd.read_excel(accumulator_file)\n        if accumulator_file.name.endswith(\"xlsx\")\n        else pd.read_csv(accumulator_file)\n    )\n    migration = (",
+        "detail": "pages.ndc_migration_checker",
+        "documentation": {}
+    },
+    {
+        "label": "migration_file",
+        "kind": 5,
+        "importPath": "pages.ndc_migration_checker",
+        "description": "pages.ndc_migration_checker",
+        "peekOfCode": "migration_file = st.file_uploader(\"🔄 Upload NDC Migration List\", type=[\"xlsx\", \"csv\"])\ndefault_ndc_file = st.file_uploader(\"💊 Upload Default NDC Report from EHR\", type=[\"xlsx\", \"csv\"])\nif accumulator_file and migration_file and default_ndc_file:\n    acc = (\n        pd.read_excel(accumulator_file)\n        if accumulator_file.name.endswith(\"xlsx\")\n        else pd.read_csv(accumulator_file)\n    )\n    migration = (\n        pd.read_excel(migration_file)",
+        "detail": "pages.ndc_migration_checker",
+        "documentation": {}
+    },
+    {
+        "label": "default_ndc_file",
+        "kind": 5,
+        "importPath": "pages.ndc_migration_checker",
+        "description": "pages.ndc_migration_checker",
+        "peekOfCode": "default_ndc_file = st.file_uploader(\"💊 Upload Default NDC Report from EHR\", type=[\"xlsx\", \"csv\"])\nif accumulator_file and migration_file and default_ndc_file:\n    acc = (\n        pd.read_excel(accumulator_file)\n        if accumulator_file.name.endswith(\"xlsx\")\n        else pd.read_csv(accumulator_file)\n    )\n    migration = (\n        pd.read_excel(migration_file)\n        if migration_file.name.endswith(\"xlsx\")",
+        "detail": "pages.ndc_migration_checker",
+        "documentation": {}
+    },
+    {
+        "label": "provider_file",
+        "kind": 5,
+        "importPath": "pages.provider_site_checker",
+        "description": "pages.provider_site_checker",
+        "peekOfCode": "provider_file = st.file_uploader(\"👨‍⚕️ Upload Provider List (with NPI)\", type=[\"xlsx\", \"csv\"])\nsite_file = st.file_uploader(\"🏥 Upload 340B Site Registration List\", type=[\"xlsx\", \"csv\"])\nif provider_file and site_file:\n    providers = (\n        pd.read_excel(provider_file)\n        if provider_file.name.endswith(\"xlsx\")\n        else pd.read_csv(provider_file)\n    )\n    sites = (\n        pd.read_excel(site_file)",
+        "detail": "pages.provider_site_checker",
+        "documentation": {}
+    },
+    {
+        "label": "site_file",
+        "kind": 5,
+        "importPath": "pages.provider_site_checker",
+        "description": "pages.provider_site_checker",
+        "peekOfCode": "site_file = st.file_uploader(\"🏥 Upload 340B Site Registration List\", type=[\"xlsx\", \"csv\"])\nif provider_file and site_file:\n    providers = (\n        pd.read_excel(provider_file)\n        if provider_file.name.endswith(\"xlsx\")\n        else pd.read_csv(provider_file)\n    )\n    sites = (\n        pd.read_excel(site_file)\n        if site_file.name.endswith(\"xlsx\")",
+        "detail": "pages.provider_site_checker",
+        "documentation": {}
+    },
+    {
+        "label": "LIBRARY_FOLDER",
+        "kind": 5,
+        "importPath": "pages.report_generator",
+        "description": "pages.report_generator",
+        "peekOfCode": "LIBRARY_FOLDER = \"library\"\nSUMMARY_DATA = {\n    \"Compliance Flags\": \"compliance_flags.csv\",\n    \"Overcharges\": \"invoice_overcharges.csv\",\n    \"Eligible Sites\": \"340B_site_crosswalk.csv\",\n    \"Document Log\": \"library_index.csv\"\n}\n# Select report type\nst.subheader(\"📁 Select Report Type\")\nreport_type = st.selectbox(\"Choose a report to view\", list(SUMMARY_DATA.keys()))",
+        "detail": "pages.report_generator",
+        "documentation": {}
+    },
+    {
+        "label": "SUMMARY_DATA",
+        "kind": 5,
+        "importPath": "pages.report_generator",
+        "description": "pages.report_generator",
+        "peekOfCode": "SUMMARY_DATA = {\n    \"Compliance Flags\": \"compliance_flags.csv\",\n    \"Overcharges\": \"invoice_overcharges.csv\",\n    \"Eligible Sites\": \"340B_site_crosswalk.csv\",\n    \"Document Log\": \"library_index.csv\"\n}\n# Select report type\nst.subheader(\"📁 Select Report Type\")\nreport_type = st.selectbox(\"Choose a report to view\", list(SUMMARY_DATA.keys()))\nreport_path = os.path.join(LIBRARY_FOLDER, SUMMARY_DATA[report_type])",
+        "detail": "pages.report_generator",
+        "documentation": {}
+    },
+    {
+        "label": "report_type",
+        "kind": 5,
+        "importPath": "pages.report_generator",
+        "description": "pages.report_generator",
+        "peekOfCode": "report_type = st.selectbox(\"Choose a report to view\", list(SUMMARY_DATA.keys()))\nreport_path = os.path.join(LIBRARY_FOLDER, SUMMARY_DATA[report_type])\nif os.path.exists(report_path):\n    df = pd.read_csv(report_path)\n    st.success(f\"✅ Loaded report: {report_type}\")\n    st.dataframe(df)\n    st.download_button(\n        f\"⬇️ Download {report_type} Report\",\n        data=df.to_csv(index=False),\n        file_name=f\"{report_type.replace(' ', '_').lower()}_report.csv\",",
+        "detail": "pages.report_generator",
+        "documentation": {}
+    },
+    {
+        "label": "report_path",
+        "kind": 5,
+        "importPath": "pages.report_generator",
+        "description": "pages.report_generator",
+        "peekOfCode": "report_path = os.path.join(LIBRARY_FOLDER, SUMMARY_DATA[report_type])\nif os.path.exists(report_path):\n    df = pd.read_csv(report_path)\n    st.success(f\"✅ Loaded report: {report_type}\")\n    st.dataframe(df)\n    st.download_button(\n        f\"⬇️ Download {report_type} Report\",\n        data=df.to_csv(index=False),\n        file_name=f\"{report_type.replace(' ', '_').lower()}_report.csv\",\n        mime=\"text/csv\"",
+        "detail": "pages.report_generator",
+        "documentation": {}
+    },
+    {
+        "label": "reverse_file",
+        "kind": 5,
+        "importPath": "pages.reverse_distribution_analyzer",
+        "description": "pages.reverse_distribution_analyzer",
+        "peekOfCode": "reverse_file = st.file_uploader(\"📦 Upload Reverse Distribution Report\", type=[\"xlsx\", \"csv\"])\nprice_file = st.file_uploader(\"💰 Upload NDC Price File (optional)\", type=[\"xlsx\", \"csv\"])\nif reverse_file:\n    rev = (\n        pd.read_excel(reverse_file)\n        if reverse_file.name.endswith(\"xlsx\")\n        else pd.read_csv(reverse_file)\n    )\n    if price_file:\n        price = (",
+        "detail": "pages.reverse_distribution_analyzer",
+        "documentation": {}
+    },
+    {
+        "label": "price_file",
+        "kind": 5,
+        "importPath": "pages.reverse_distribution_analyzer",
+        "description": "pages.reverse_distribution_analyzer",
+        "peekOfCode": "price_file = st.file_uploader(\"💰 Upload NDC Price File (optional)\", type=[\"xlsx\", \"csv\"])\nif reverse_file:\n    rev = (\n        pd.read_excel(reverse_file)\n        if reverse_file.name.endswith(\"xlsx\")\n        else pd.read_csv(reverse_file)\n    )\n    if price_file:\n        price = (\n            pd.read_excel(price_file)",
+        "detail": "pages.reverse_distribution_analyzer",
+        "documentation": {}
+    },
+    {
+        "label": "rule_file",
+        "kind": 5,
+        "importPath": "pages.rule_library_builder",
+        "description": "pages.rule_library_builder",
+        "peekOfCode": "rule_file = st.file_uploader(\n    \"📤 Upload Rule File (Orphan NDCs, Carve-In Logic, Plan BINs)\", type=[\"xlsx\", \"csv\"]\n)\nif rule_file:\n    rules = (\n        pd.read_excel(rule_file)\n        if rule_file.name.endswith(\"xlsx\")\n        else pd.read_csv(rule_file)\n    )\n    st.subheader(\"📖 Rule File Preview\")",
+        "detail": "pages.rule_library_builder",
+        "documentation": {}
+    },
+    {
+        "label": "load_data",
+        "kind": 2,
+        "importPath": "pages.vendor_contract_analyzer",
+        "description": "pages.vendor_contract_analyzer",
+        "peekOfCode": "def load_data(file):\n    if not file:\n        return pd.DataFrame()\n    return pd.read_excel(file) if file.name.endswith(\"xlsx\") else pd.read_csv(file)\ncontracts = load_data(contract_file)\nperformance = load_data(performance_file)\nif not contracts.empty and not performance.empty:\n    st.subheader(\"🔗 Merged Vendor & Performance Data\")\n    # Merge on Vendor or Pharmacy Store ID\n    if \"Store ID\" in contracts.columns and \"Store ID\" in performance.columns:",
+        "detail": "pages.vendor_contract_analyzer",
+        "documentation": {}
+    },
+    {
+        "label": "contract_file",
+        "kind": 5,
+        "importPath": "pages.vendor_contract_analyzer",
+        "description": "pages.vendor_contract_analyzer",
+        "peekOfCode": "contract_file = st.file_uploader(\"📜 Upload Contract/Vendor Agreement Data\", type=[\"xlsx\", \"csv\"])\nperformance_file = st.file_uploader(\"📊 Upload Contract Pharmacy Performance Report\", type=[\"xlsx\", \"csv\"])\ndef load_data(file):\n    if not file:\n        return pd.DataFrame()\n    return pd.read_excel(file) if file.name.endswith(\"xlsx\") else pd.read_csv(file)\ncontracts = load_data(contract_file)\nperformance = load_data(performance_file)\nif not contracts.empty and not performance.empty:\n    st.subheader(\"🔗 Merged Vendor & Performance Data\")",
+        "detail": "pages.vendor_contract_analyzer",
+        "documentation": {}
+    },
+    {
+        "label": "performance_file",
+        "kind": 5,
+        "importPath": "pages.vendor_contract_analyzer",
+        "description": "pages.vendor_contract_analyzer",
+        "peekOfCode": "performance_file = st.file_uploader(\"📊 Upload Contract Pharmacy Performance Report\", type=[\"xlsx\", \"csv\"])\ndef load_data(file):\n    if not file:\n        return pd.DataFrame()\n    return pd.read_excel(file) if file.name.endswith(\"xlsx\") else pd.read_csv(file)\ncontracts = load_data(contract_file)\nperformance = load_data(performance_file)\nif not contracts.empty and not performance.empty:\n    st.subheader(\"🔗 Merged Vendor & Performance Data\")\n    # Merge on Vendor or Pharmacy Store ID",
+        "detail": "pages.vendor_contract_analyzer",
+        "documentation": {}
+    },
+    {
+        "label": "contracts",
+        "kind": 5,
+        "importPath": "pages.vendor_contract_analyzer",
+        "description": "pages.vendor_contract_analyzer",
+        "peekOfCode": "contracts = load_data(contract_file)\nperformance = load_data(performance_file)\nif not contracts.empty and not performance.empty:\n    st.subheader(\"🔗 Merged Vendor & Performance Data\")\n    # Merge on Vendor or Pharmacy Store ID\n    if \"Store ID\" in contracts.columns and \"Store ID\" in performance.columns:\n        merged = pd.merge(performance, contracts, on=\"Store ID\", how=\"left\")\n    elif \"Vendor\" in contracts.columns and \"Vendor\" in performance.columns:\n        merged = pd.merge(performance, contracts, on=\"Vendor\", how=\"left\")\n    else:",
+        "detail": "pages.vendor_contract_analyzer",
+        "documentation": {}
+    },
+    {
+        "label": "performance",
+        "kind": 5,
+        "importPath": "pages.vendor_contract_analyzer",
+        "description": "pages.vendor_contract_analyzer",
+        "peekOfCode": "performance = load_data(performance_file)\nif not contracts.empty and not performance.empty:\n    st.subheader(\"🔗 Merged Vendor & Performance Data\")\n    # Merge on Vendor or Pharmacy Store ID\n    if \"Store ID\" in contracts.columns and \"Store ID\" in performance.columns:\n        merged = pd.merge(performance, contracts, on=\"Store ID\", how=\"left\")\n    elif \"Vendor\" in contracts.columns and \"Vendor\" in performance.columns:\n        merged = pd.merge(performance, contracts, on=\"Vendor\", how=\"left\")\n    else:\n        st.warning(\"⚠️ Could not match 'Store ID' or 'Vendor' columns between files.\")",
+        "detail": "pages.vendor_contract_analyzer",
+        "documentation": {}
+    },
+    {
+        "label": "encounter_file",
+        "kind": 5,
+        "importPath": "pages.waste_recovery",
+        "description": "pages.waste_recovery",
+        "peekOfCode": "encounter_file = st.file_uploader(\"📥 Upload Encounter File\", type=[\"xlsx\", \"csv\"])\ndispense_file = st.file_uploader(\"💉 Upload Dispense File\", type=[\"xlsx\", \"csv\"])\nprice_file = st.file_uploader(\"💰 Upload NDC Price File (optional)\", type=[\"xlsx\", \"csv\"])\nif encounter_file and dispense_file:\n    enc = (\n        pd.read_excel(encounter_file)\n        if encounter_file.name.endswith(\"xlsx\")\n        else pd.read_csv(encounter_file)\n    )\n    disp = (",
+        "detail": "pages.waste_recovery",
+        "documentation": {}
+    },
+    {
+        "label": "dispense_file",
+        "kind": 5,
+        "importPath": "pages.waste_recovery",
+        "description": "pages.waste_recovery",
+        "peekOfCode": "dispense_file = st.file_uploader(\"💉 Upload Dispense File\", type=[\"xlsx\", \"csv\"])\nprice_file = st.file_uploader(\"💰 Upload NDC Price File (optional)\", type=[\"xlsx\", \"csv\"])\nif encounter_file and dispense_file:\n    enc = (\n        pd.read_excel(encounter_file)\n        if encounter_file.name.endswith(\"xlsx\")\n        else pd.read_csv(encounter_file)\n    )\n    disp = (\n        pd.read_excel(dispense_file)",
+        "detail": "pages.waste_recovery",
+        "documentation": {}
+    },
+    {
+        "label": "price_file",
+        "kind": 5,
+        "importPath": "pages.waste_recovery",
+        "description": "pages.waste_recovery",
+        "peekOfCode": "price_file = st.file_uploader(\"💰 Upload NDC Price File (optional)\", type=[\"xlsx\", \"csv\"])\nif encounter_file and dispense_file:\n    enc = (\n        pd.read_excel(encounter_file)\n        if encounter_file.name.endswith(\"xlsx\")\n        else pd.read_csv(encounter_file)\n    )\n    disp = (\n        pd.read_excel(dispense_file)\n        if dispense_file.name.endswith(\"xlsx\")",
+        "detail": "pages.waste_recovery",
+        "documentation": {}
+    },
+    {
+        "label": "waste_recovery_rate",
+        "kind": 5,
+        "importPath": "pages.what_if_scenario_modeler",
+        "description": "pages.what_if_scenario_modeler",
+        "peekOfCode": "waste_recovery_rate = st.slider(\"Waste Recovery Rate (%)\", 0, 100, 60)\novercharge_recovery_rate = st.slider(\"Overcharge Dispute Success Rate (%)\", 0, 100, 80)\nsite_expansion = st.number_input(\"New 340B-Eligible Sites Added\", min_value=0, step=1, value=0)\nreturn_recoup_rate = st.slider(\"Return Credit Success Rate (%)\", 0, 100, 70)\n# Mock base values (replace with real backend link later)\nbase_waste_savings = 50000\nbase_overcharges = 40000\nbase_return_losses = 20000\nbase_sites = 12\navg_site_savings = 15000",
+        "detail": "pages.what_if_scenario_modeler",
+        "documentation": {}
+    },
+    {
+        "label": "overcharge_recovery_rate",
+        "kind": 5,
+        "importPath": "pages.what_if_scenario_modeler",
+        "description": "pages.what_if_scenario_modeler",
+        "peekOfCode": "overcharge_recovery_rate = st.slider(\"Overcharge Dispute Success Rate (%)\", 0, 100, 80)\nsite_expansion = st.number_input(\"New 340B-Eligible Sites Added\", min_value=0, step=1, value=0)\nreturn_recoup_rate = st.slider(\"Return Credit Success Rate (%)\", 0, 100, 70)\n# Mock base values (replace with real backend link later)\nbase_waste_savings = 50000\nbase_overcharges = 40000\nbase_return_losses = 20000\nbase_sites = 12\navg_site_savings = 15000\n# Calculated scenarios",
+        "detail": "pages.what_if_scenario_modeler",
+        "documentation": {}
+    },
+    {
+        "label": "site_expansion",
+        "kind": 5,
+        "importPath": "pages.what_if_scenario_modeler",
+        "description": "pages.what_if_scenario_modeler",
+        "peekOfCode": "site_expansion = st.number_input(\"New 340B-Eligible Sites Added\", min_value=0, step=1, value=0)\nreturn_recoup_rate = st.slider(\"Return Credit Success Rate (%)\", 0, 100, 70)\n# Mock base values (replace with real backend link later)\nbase_waste_savings = 50000\nbase_overcharges = 40000\nbase_return_losses = 20000\nbase_sites = 12\navg_site_savings = 15000\n# Calculated scenarios\nprojected_waste = base_waste_savings * (waste_recovery_rate / 100)",
+        "detail": "pages.what_if_scenario_modeler",
+        "documentation": {}
+    },
+    {
+        "label": "return_recoup_rate",
+        "kind": 5,
+        "importPath": "pages.what_if_scenario_modeler",
+        "description": "pages.what_if_scenario_modeler",
+        "peekOfCode": "return_recoup_rate = st.slider(\"Return Credit Success Rate (%)\", 0, 100, 70)\n# Mock base values (replace with real backend link later)\nbase_waste_savings = 50000\nbase_overcharges = 40000\nbase_return_losses = 20000\nbase_sites = 12\navg_site_savings = 15000\n# Calculated scenarios\nprojected_waste = base_waste_savings * (waste_recovery_rate / 100)\nprojected_overcharges = base_overcharges * (overcharge_recovery_rate / 100)",
+        "detail": "pages.what_if_scenario_modeler",
+        "documentation": {}
+    },
+    {
+        "label": "base_waste_savings",
+        "kind": 5,
+        "importPath": "pages.what_if_scenario_modeler",
+        "description": "pages.what_if_scenario_modeler",
+        "peekOfCode": "base_waste_savings = 50000\nbase_overcharges = 40000\nbase_return_losses = 20000\nbase_sites = 12\navg_site_savings = 15000\n# Calculated scenarios\nprojected_waste = base_waste_savings * (waste_recovery_rate / 100)\nprojected_overcharges = base_overcharges * (overcharge_recovery_rate / 100)\nprojected_return = base_return_losses * (return_recoup_rate / 100)\nprojected_site_savings = site_expansion * avg_site_savings",
+        "detail": "pages.what_if_scenario_modeler",
+        "documentation": {}
+    },
+    {
+        "label": "base_overcharges",
+        "kind": 5,
+        "importPath": "pages.what_if_scenario_modeler",
+        "description": "pages.what_if_scenario_modeler",
+        "peekOfCode": "base_overcharges = 40000\nbase_return_losses = 20000\nbase_sites = 12\navg_site_savings = 15000\n# Calculated scenarios\nprojected_waste = base_waste_savings * (waste_recovery_rate / 100)\nprojected_overcharges = base_overcharges * (overcharge_recovery_rate / 100)\nprojected_return = base_return_losses * (return_recoup_rate / 100)\nprojected_site_savings = site_expansion * avg_site_savings\ntotal_projection = projected_waste + projected_overcharges + projected_return + projected_site_savings",
+        "detail": "pages.what_if_scenario_modeler",
+        "documentation": {}
+    },
+    {
+        "label": "base_return_losses",
+        "kind": 5,
+        "importPath": "pages.what_if_scenario_modeler",
+        "description": "pages.what_if_scenario_modeler",
+        "peekOfCode": "base_return_losses = 20000\nbase_sites = 12\navg_site_savings = 15000\n# Calculated scenarios\nprojected_waste = base_waste_savings * (waste_recovery_rate / 100)\nprojected_overcharges = base_overcharges * (overcharge_recovery_rate / 100)\nprojected_return = base_return_losses * (return_recoup_rate / 100)\nprojected_site_savings = site_expansion * avg_site_savings\ntotal_projection = projected_waste + projected_overcharges + projected_return + projected_site_savings\nbaseline = base_waste_savings + base_overcharges + (base_sites * avg_site_savings)",
+        "detail": "pages.what_if_scenario_modeler",
+        "documentation": {}
+    },
+    {
+        "label": "base_sites",
+        "kind": 5,
+        "importPath": "pages.what_if_scenario_modeler",
+        "description": "pages.what_if_scenario_modeler",
+        "peekOfCode": "base_sites = 12\navg_site_savings = 15000\n# Calculated scenarios\nprojected_waste = base_waste_savings * (waste_recovery_rate / 100)\nprojected_overcharges = base_overcharges * (overcharge_recovery_rate / 100)\nprojected_return = base_return_losses * (return_recoup_rate / 100)\nprojected_site_savings = site_expansion * avg_site_savings\ntotal_projection = projected_waste + projected_overcharges + projected_return + projected_site_savings\nbaseline = base_waste_savings + base_overcharges + (base_sites * avg_site_savings)\n# Display projections",
+        "detail": "pages.what_if_scenario_modeler",
+        "documentation": {}
+    },
+    {
+        "label": "avg_site_savings",
+        "kind": 5,
+        "importPath": "pages.what_if_scenario_modeler",
+        "description": "pages.what_if_scenario_modeler",
+        "peekOfCode": "avg_site_savings = 15000\n# Calculated scenarios\nprojected_waste = base_waste_savings * (waste_recovery_rate / 100)\nprojected_overcharges = base_overcharges * (overcharge_recovery_rate / 100)\nprojected_return = base_return_losses * (return_recoup_rate / 100)\nprojected_site_savings = site_expansion * avg_site_savings\ntotal_projection = projected_waste + projected_overcharges + projected_return + projected_site_savings\nbaseline = base_waste_savings + base_overcharges + (base_sites * avg_site_savings)\n# Display projections\nst.subheader(\"📈 Scenario Impact Summary\")",
+        "detail": "pages.what_if_scenario_modeler",
+        "documentation": {}
+    },
+    {
+        "label": "projected_waste",
+        "kind": 5,
+        "importPath": "pages.what_if_scenario_modeler",
+        "description": "pages.what_if_scenario_modeler",
+        "peekOfCode": "projected_waste = base_waste_savings * (waste_recovery_rate / 100)\nprojected_overcharges = base_overcharges * (overcharge_recovery_rate / 100)\nprojected_return = base_return_losses * (return_recoup_rate / 100)\nprojected_site_savings = site_expansion * avg_site_savings\ntotal_projection = projected_waste + projected_overcharges + projected_return + projected_site_savings\nbaseline = base_waste_savings + base_overcharges + (base_sites * avg_site_savings)\n# Display projections\nst.subheader(\"📈 Scenario Impact Summary\")\nsummary_df = pd.DataFrame({\n    \"Category\": [",
+        "detail": "pages.what_if_scenario_modeler",
+        "documentation": {}
+    },
+    {
+        "label": "projected_overcharges",
+        "kind": 5,
+        "importPath": "pages.what_if_scenario_modeler",
+        "description": "pages.what_if_scenario_modeler",
+        "peekOfCode": "projected_overcharges = base_overcharges * (overcharge_recovery_rate / 100)\nprojected_return = base_return_losses * (return_recoup_rate / 100)\nprojected_site_savings = site_expansion * avg_site_savings\ntotal_projection = projected_waste + projected_overcharges + projected_return + projected_site_savings\nbaseline = base_waste_savings + base_overcharges + (base_sites * avg_site_savings)\n# Display projections\nst.subheader(\"📈 Scenario Impact Summary\")\nsummary_df = pd.DataFrame({\n    \"Category\": [\n        \"Recovered Waste Savings\",",
+        "detail": "pages.what_if_scenario_modeler",
+        "documentation": {}
+    },
+    {
+        "label": "projected_return",
+        "kind": 5,
+        "importPath": "pages.what_if_scenario_modeler",
+        "description": "pages.what_if_scenario_modeler",
+        "peekOfCode": "projected_return = base_return_losses * (return_recoup_rate / 100)\nprojected_site_savings = site_expansion * avg_site_savings\ntotal_projection = projected_waste + projected_overcharges + projected_return + projected_site_savings\nbaseline = base_waste_savings + base_overcharges + (base_sites * avg_site_savings)\n# Display projections\nst.subheader(\"📈 Scenario Impact Summary\")\nsummary_df = pd.DataFrame({\n    \"Category\": [\n        \"Recovered Waste Savings\",\n        \"Resolved Overcharges\",",
+        "detail": "pages.what_if_scenario_modeler",
+        "documentation": {}
+    },
+    {
+        "label": "projected_site_savings",
+        "kind": 5,
+        "importPath": "pages.what_if_scenario_modeler",
+        "description": "pages.what_if_scenario_modeler",
+        "peekOfCode": "projected_site_savings = site_expansion * avg_site_savings\ntotal_projection = projected_waste + projected_overcharges + projected_return + projected_site_savings\nbaseline = base_waste_savings + base_overcharges + (base_sites * avg_site_savings)\n# Display projections\nst.subheader(\"📈 Scenario Impact Summary\")\nsummary_df = pd.DataFrame({\n    \"Category\": [\n        \"Recovered Waste Savings\",\n        \"Resolved Overcharges\",\n        \"Recouped Drug Returns\",",
+        "detail": "pages.what_if_scenario_modeler",
+        "documentation": {}
+    },
+    {
+        "label": "total_projection",
+        "kind": 5,
+        "importPath": "pages.what_if_scenario_modeler",
+        "description": "pages.what_if_scenario_modeler",
+        "peekOfCode": "total_projection = projected_waste + projected_overcharges + projected_return + projected_site_savings\nbaseline = base_waste_savings + base_overcharges + (base_sites * avg_site_savings)\n# Display projections\nst.subheader(\"📈 Scenario Impact Summary\")\nsummary_df = pd.DataFrame({\n    \"Category\": [\n        \"Recovered Waste Savings\",\n        \"Resolved Overcharges\",\n        \"Recouped Drug Returns\",\n        \"Savings from Site Expansion\"",
+        "detail": "pages.what_if_scenario_modeler",
+        "documentation": {}
+    },
+    {
+        "label": "baseline",
+        "kind": 5,
+        "importPath": "pages.what_if_scenario_modeler",
+        "description": "pages.what_if_scenario_modeler",
+        "peekOfCode": "baseline = base_waste_savings + base_overcharges + (base_sites * avg_site_savings)\n# Display projections\nst.subheader(\"📈 Scenario Impact Summary\")\nsummary_df = pd.DataFrame({\n    \"Category\": [\n        \"Recovered Waste Savings\",\n        \"Resolved Overcharges\",\n        \"Recouped Drug Returns\",\n        \"Savings from Site Expansion\"\n    ],",
+        "detail": "pages.what_if_scenario_modeler",
+        "documentation": {}
+    },
+    {
+        "label": "summary_df",
+        "kind": 5,
+        "importPath": "pages.what_if_scenario_modeler",
+        "description": "pages.what_if_scenario_modeler",
+        "peekOfCode": "summary_df = pd.DataFrame({\n    \"Category\": [\n        \"Recovered Waste Savings\",\n        \"Resolved Overcharges\",\n        \"Recouped Drug Returns\",\n        \"Savings from Site Expansion\"\n    ],\n    \"Projected Impact ($)\": [\n        projected_waste,\n        projected_overcharges,",
+        "detail": "pages.what_if_scenario_modeler",
+        "documentation": {}
+    },
+    {
+        "label": "delta",
+        "kind": 5,
+        "importPath": "pages.what_if_scenario_modeler",
+        "description": "pages.what_if_scenario_modeler",
+        "peekOfCode": "delta = total_projection - baseline\ndelta_percent = (delta / baseline) * 100\nst.metric(label=\"💰 Total Projected Program Savings\", value=f\"${total_projection:,.2f}\",\n          delta=f\"{delta:+,.2f} ({delta_percent:+.1f}%)\")\n# Download option\ncsv = summary_df.to_csv(index=False)\nst.download_button(\"⬇️ Download Scenario Summary\", csv, \"what_if_scenario_summary.csv\", \"text/csv\")",
+        "detail": "pages.what_if_scenario_modeler",
+        "documentation": {}
+    },
+    {
+        "label": "delta_percent",
+        "kind": 5,
+        "importPath": "pages.what_if_scenario_modeler",
+        "description": "pages.what_if_scenario_modeler",
+        "peekOfCode": "delta_percent = (delta / baseline) * 100\nst.metric(label=\"💰 Total Projected Program Savings\", value=f\"${total_projection:,.2f}\",\n          delta=f\"{delta:+,.2f} ({delta_percent:+.1f}%)\")\n# Download option\ncsv = summary_df.to_csv(index=False)\nst.download_button(\"⬇️ Download Scenario Summary\", csv, \"what_if_scenario_summary.csv\", \"text/csv\")",
+        "detail": "pages.what_if_scenario_modeler",
+        "documentation": {}
+    },
+    {
+        "label": "csv",
+        "kind": 5,
+        "importPath": "pages.what_if_scenario_modeler",
+        "description": "pages.what_if_scenario_modeler",
+        "peekOfCode": "csv = summary_df.to_csv(index=False)\nst.download_button(\"⬇️ Download Scenario Summary\", csv, \"what_if_scenario_summary.csv\", \"text/csv\")",
+        "detail": "pages.what_if_scenario_modeler",
+        "documentation": {}
+    },
+    {
+        "label": "accum_file",
+        "kind": 5,
+        "importPath": "accumulator_checker",
+        "description": "accumulator_checker",
+        "peekOfCode": "accum_file = st.file_uploader(\"📦 Upload TPA Accumulator File\", type=[\"xlsx\", \"csv\"])\nclaims_file = st.file_uploader(\"💊 Upload Claims or Dispenses File\", type=[\"xlsx\", \"csv\"])\nif accum_file and claims_file:\n    # Load files\n    acc_df = pd.read_excel(accum_file) if accum_file.name.endswith(\"xlsx\") else pd.read_csv(accum_file)\n    claims_df = pd.read_excel(claims_file) if claims_file.name.endswith(\"xlsx\") else pd.read_csv(claims_file)\n    st.subheader(\"📦 Accumulator Preview\")\n    st.dataframe(acc_df.head())\n    st.subheader(\"💊 Claims Preview\")\n    st.dataframe(claims_df.head())",
+        "detail": "accumulator_checker",
+        "documentation": {}
+    },
+    {
+        "label": "claims_file",
+        "kind": 5,
+        "importPath": "accumulator_checker",
+        "description": "accumulator_checker",
+        "peekOfCode": "claims_file = st.file_uploader(\"💊 Upload Claims or Dispenses File\", type=[\"xlsx\", \"csv\"])\nif accum_file and claims_file:\n    # Load files\n    acc_df = pd.read_excel(accum_file) if accum_file.name.endswith(\"xlsx\") else pd.read_csv(accum_file)\n    claims_df = pd.read_excel(claims_file) if claims_file.name.endswith(\"xlsx\") else pd.read_csv(claims_file)\n    st.subheader(\"📦 Accumulator Preview\")\n    st.dataframe(acc_df.head())\n    st.subheader(\"💊 Claims Preview\")\n    st.dataframe(claims_df.head())\n    # Normalize dates",
+        "detail": "accumulator_checker",
+        "documentation": {}
+    },
+    {
+        "label": "uploaded_file",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "uploaded_file = st.file_uploader(\n    \"Upload Medicare Cost Report (Excel)\", type=[\"xlsx\"]\n)\nif uploaded_file:\n    try:\n        xls = pd.ExcelFile(uploaded_file)\n        sheet_names = xls.sheet_names\n        st.success(\"✅ File loaded successfully\")\n        st.write(\"Worksheets found:\", sheet_names)\n        ws_a = xls.parse(\"Worksheet A\")",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "load_data",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def load_data(filename):\n    \"\"\"Loads a CSV file from the /library folder into a pandas DataFrame.\n    Args:\n        filename (str): The name of the CSV file to load.\n    Returns:\n        pd.DataFrame: The loaded data, or an empty DataFrame if the file doesn't exist.\n    \"\"\"\n    path = os.path.join(DATA_PATH, filename)\n    return pd.read_csv(path) if os.path.exists(path) else pd.DataFrame()\ncompliance_df = load_data(\"compliance_flags.csv\")",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "DATA_PATH",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "DATA_PATH = \"library\"\n# Try loading each type of summary data\ndef load_data(filename):\n    \"\"\"Loads a CSV file from the /library folder into a pandas DataFrame.\n    Args:\n        filename (str): The name of the CSV file to load.\n    Returns:\n        pd.DataFrame: The loaded data, or an empty DataFrame if the file doesn't exist.\n    \"\"\"\n    path = os.path.join(DATA_PATH, filename)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "compliance_df",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "compliance_df = load_data(\"compliance_flags.csv\")\novercharge_df = load_data(\"invoice_overcharges.csv\")\nwaste_df = load_data(\"waste_recovery_report.csv\")\nreverse_df = load_data(\"reverse_return_analysis.csv\")\nst.subheader(\"📊 Key Program KPIs\")\ncol1, col2, col3, col4 = st.columns(4)\ncol1.metric(\n    \"⚠️ Compliance Flags\",\n    f\"{len(compliance_df):,}\" if not compliance_df.empty else \"0\"\n)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "overcharge_df",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "overcharge_df = load_data(\"invoice_overcharges.csv\")\nwaste_df = load_data(\"waste_recovery_report.csv\")\nreverse_df = load_data(\"reverse_return_analysis.csv\")\nst.subheader(\"📊 Key Program KPIs\")\ncol1, col2, col3, col4 = st.columns(4)\ncol1.metric(\n    \"⚠️ Compliance Flags\",\n    f\"{len(compliance_df):,}\" if not compliance_df.empty else \"0\"\n)\ncol2.metric(",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "waste_df",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "waste_df = load_data(\"waste_recovery_report.csv\")\nreverse_df = load_data(\"reverse_return_analysis.csv\")\nst.subheader(\"📊 Key Program KPIs\")\ncol1, col2, col3, col4 = st.columns(4)\ncol1.metric(\n    \"⚠️ Compliance Flags\",\n    f\"{len(compliance_df):,}\" if not compliance_df.empty else \"0\"\n)\ncol2.metric(\n    \"💰 Overcharges Found\",",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "reverse_df",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "reverse_df = load_data(\"reverse_return_analysis.csv\")\nst.subheader(\"📊 Key Program KPIs\")\ncol1, col2, col3, col4 = st.columns(4)\ncol1.metric(\n    \"⚠️ Compliance Flags\",\n    f\"{len(compliance_df):,}\" if not compliance_df.empty else \"0\"\n)\ncol2.metric(\n    \"💰 Overcharges Found\",\n    f\"${overcharge_df['Overcharge ($)'].sum():,.2f}\"",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "index_file",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "index_file = os.path.join(DATA_PATH, \"library_index.csv\")\nif os.path.exists(index_file):\n    docs = pd.read_csv(index_file)\n    docs[\"Upload Date\"] = pd.to_datetime(docs[\"Upload Date\"])\n    docs = docs.sort_values(\"Upload Date\", ascending=False).head(10)\n    st.dataframe(docs)\nelse:\n    st.info(\"No uploads have been tracked yet.\")\nst.divider()\nst.subheader(\"📌 Suggested Actions\")",
+        "detail": "main",
+        "documentation": {}
+    }
+]
